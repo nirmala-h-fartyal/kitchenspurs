@@ -19,7 +19,7 @@ This is a Laravel-based Article Management System with role-based access control
 ### 1. Clone the Repository
 ```bash
 # Clone the project
- git clone <your-repo-url> kitchenspurs
+ git clone https://github.com/nirmala-h-fartyal/kitchenspurs.git
  cd kitchenspurs
 ```
 
