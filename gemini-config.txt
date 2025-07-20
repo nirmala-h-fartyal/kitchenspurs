@@ -1,0 +1,5 @@
+# Add these lines to your .env file:
+
+# Gemini API Configuration
+GEMINI_API_KEY=AIzaSyAI8xEFv1bNqddCfz2GStu8Xn_-9DUAR6A
+GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent 
