@@ -36,6 +36,7 @@ rename .env.example to .env
   - `DB_PASSWORD=your_db_password`
 - Set your `APP_URL` (e.g., `http://127.0.0.1:8000`)
 - Set your Gemini API credentials if using AI features:
+- Generate your gemini key (https://aistudio.google.com/apikey)
   - `GEMINI_API_KEY=your_gemini_api_key`
   - `GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent` 
 
