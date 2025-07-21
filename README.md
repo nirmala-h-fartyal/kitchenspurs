@@ -9,8 +9,6 @@ This is a Laravel-based Article Management System with role-based access control
 - PHP 8.1+
 - Composer
 - MySQL or compatible database
-- Node.js & npm (for frontend assets, if needed)
-- [Optional] Redis or other queue driver for jobs
 
 ---
 
@@ -28,9 +26,9 @@ This is a Laravel-based Article Management System with role-based access control
 composer install
 ```
 
-### 3. Copy & Configure Environment File
+### 3. Rename & Configure Environment File
 ```bash
-cp .env.example .env
+rename .env.example to .env
 ```
 - Set your database credentials in `.env`:
   - `DB_DATABASE=your_db_name`
@@ -39,7 +37,7 @@ cp .env.example .env
 - Set your `APP_URL` (e.g., `http://127.0.0.1:8000`)
 - Set your Gemini API credentials if using AI features:
   - `GEMINI_API_KEY=your_gemini_api_key`
-  - `GEMINI_API_URL=your_gemini_api_url` (optional)
+  - `GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent` 
 
 ### 4. Generate Application Key
 ```bash
@@ -56,13 +54,7 @@ php artisan migrate
 php artisan db:seed
 ```
 
-### 7. (Optional) Install Frontend Dependencies
-If you have frontend assets:
-```bash
-npm install && npm run dev
-```
-
-### 8. Run the Development Server
+### 7. Run the Development Server
 ```bash
 php artisan serve
 ```
@@ -97,7 +89,3 @@ Visit [http://127.0.0.1:8000](http://127.0.0.1:8000)
 - Run `composer install` and `php artisan key:generate` if you see errors
 - For queue jobs, ensure your queue driver is set up and run `php artisan queue:work`
 
----
-
-## License
-This project is for demonstration and educational purposes.
