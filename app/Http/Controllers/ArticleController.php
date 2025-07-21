@@ -199,30 +199,4 @@ class ArticleController extends Controller
         return response()->json(['message' => 'Article deleted successfully']);
     }
 
-    public function bulkDestroy(Request $request): JsonResponse
-    {
-        $request->validate([
-            'article_ids' => 'required|array',
-            'article_ids.*' => 'exists:articles,id',
-        ]);
-
-        if (Auth::user()->isAuthor()) {
-            $userArticles = Article::whereIn('id', $request->article_ids)
-                ->where('author_id', Auth::id())
-                ->pluck('id')
-                ->toArray();
-
-            if (count($userArticles) !== count($request->article_ids)) {
-                return response()->json(['message' => 'Unauthorized. You can only delete your own articles.'], 403);
-            }
-
-            Article::whereIn('id', $userArticles)->delete();
-        } else {
-            Article::whereIn('id', $request->article_ids)->delete();
-        }
-
-        return response()->json([
-            'message' => count($request->article_ids) . ' articles deleted successfully'
-        ]);
-    }
 } 
